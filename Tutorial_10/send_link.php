@@ -35,7 +35,9 @@ if (isset($_SESSION['email'])) {
 
             // Sender and recipient details
 
-          
+            $mail->Subject = 'Reset Password';
+            $mail->Body = 'Click On This Link to Reset Password ' . $link . '.';
+
             // Send the email
             if ($mail->send()) {
                 $_SESSION['mail_sent'] = true;
